@@ -19,6 +19,9 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
+  "gh-pages-deploy": {
+    "staticpath": "calculator"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
