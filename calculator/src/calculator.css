@@ -1,0 +1,84 @@
+.container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-auto-rows: 100px;
+    grid-template-areas:
+        "result result result result"
+        "result result result result"
+        "number number number operator"
+        "number number number operator"
+        "number number number operator"
+        "zero   zero   clear  operator";
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    color: #fefefe;
+    background-color: #000;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+button:active {
+    opacity: 0.6;
+}
+
+.result {
+    grid-area: result;
+    font-size: 40px;
+    font-weight: 900;
+    color: #fefefe;
+    align-self: end;
+    justify-self: end;
+    line-height: 200px;
+}
+
+.number-wrapper {
+    grid-area: number;
+}
+
+.operator-wrapper {
+    grid-area: operator
+}
+
+.number,
+.operator,
+.clear,
+.zero {
+    height: 100px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    color: #fefefe;
+    transform: scale(0.9);
+}
+
+.number {
+    width: 33%;
+    height: 100px;
+    background-color: #333;
+}
+
+.operator {
+    width: 100%;
+    background-color: #fe9f0a;
+    grid-area: operator;
+}
+
+.clear {
+    grid-area: clear;
+    color: #000;
+    background-color: #a5a5a5;
+}
+
+.zero {
+    grid-area: zero;
+    border-radius: 100px;
+    background-color: #333;
+}
