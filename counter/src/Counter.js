@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
-
+import propTypes from 'prop-types';
 class Counter extends Component {
-    state = {
-        count: 0,
-        step: 1
+    // props 預設值
+    static defaultProps = {
+        initCount: 10
     }
+    // 型別檢查
+    static propTypes = {
+        initCount: propTypes.number,
+    }
+
+    constructor(props){
+        super(props);
+        this.state = {
+            count: props.initCount,
+            step: 1
+        }
+    }
+
+    // 改用 props 傳入的 count
+    // state = {
+    //     count: 0,
+    //     step: 1
+    // }
 
     addCount = () => {
         const { count, step } = this.state;
@@ -24,5 +42,12 @@ class Counter extends Component {
         );
     }
 }
+/* 寫在 Component 外 */
+// Counter.defaultProps = {
+//     initCount: 0
+// }
+// Counter.propTypes = {
+//     initCount: propTypes.number,
+// }
 
 export default Counter;

@@ -112,3 +112,50 @@ sayHi = () => {
 // Item.js
 `<li>{this.props.children}</li>`
 ```
+
+### 進階
+#### 用 props 指定初始 state
+
+```javascript
+// index.js
+<Counter initCount={10} />
+
+// Counter.js
+contructor(props){
+    super(props);
+    this.state = {
+        count: props.initCount
+    }
+}
+```
+
+#### 用 defaultProps 指定預設 props
+
+```javascript
+// 寫在 Component 裡
+static defaultProps = {
+    initCount: 0,
+}
+
+// 在宣告完 Component 後再加上去
+Counter.defaultProps = {
+    initCount: 0,
+}
+```
+
+#### 用 propTypes 檢查 props 型別
+引入 React 型別檢查 `import PropTypes from 'prop-type`
+
+```javascript
+
+// 寫在 Component 裡
+static propTypes = {
+    initCount: PropTypes.number
+}
+
+// or 寫在 Component 外
+Counter.propTypes= {
+    initCount: PropTypes.number
+
+}
+```
