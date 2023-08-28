@@ -159,3 +159,49 @@ Counter.propTypes= {
 
 }
 ```
+
+## state
+
+### setState 可傳入 function
+
+```javascript
+this.setState({
+    count: this.state.count + 1,
+});
+
+this.setState({
+    count: this.state.count + 1,
+});
+
+this.setState({
+    count: this.state.count + 1,
+});
+```
+
+setState 為非同步操作，可改傳入函式
+```javascript
+this.setState = ((state)=> ({
+    count: state.count + 1,
+}))
+
+this.setState = ((state)=> ({
+    count: state.count + 1,
+}))
+
+this.setState = ((state)=> ({
+    count: state.count + 1,
+}))
+
+```
+
+### setState 傳入 callback
+
+```javascript
+// this.setState = ({}, callbackFunction)
+
+this.setState = ({
+    count: this.state.count + 1,
+}, () => {
+    this.sendCount();
+})
+```

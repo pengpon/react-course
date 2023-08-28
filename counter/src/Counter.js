@@ -29,7 +29,13 @@ class Counter extends Component {
         this.setState({
             count: count + step,
             step: step + 1,
+        }, () => {
+            this.sendCount()
         })
+    };
+
+    sendCount = () => {
+        fetch(`api/count?value=${this.state.count}`)
     }
 
     render() {
