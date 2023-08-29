@@ -1,0 +1,12 @@
+.folder {
+    color: #333;
+    cursor: pointer;
+}
+
+.folder::before {
+    content: '📁';
+}
+
+.folder.open::before{
+    content: '📂';
+}
